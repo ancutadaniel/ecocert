@@ -24,12 +24,6 @@ class HomePage extends React.Component {
                             <LinkContainer exact to="/addimage">
                                 <Nav.Link>Raporteaza</Nav.Link>
                             </LinkContainer>
-                            <p>
-
-                            </p>
-                            <button className="">
-                                Raporteaza
-                            </button>
                         </Col>
                     </Row>
                 </Container>

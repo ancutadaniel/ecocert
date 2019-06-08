@@ -39,6 +39,7 @@ class AddImage extends React.Component {
 
     handleClick(){
         console.log(this.pond.getFiles());
+        window.location = '/formular';
     }
 
     render() {
