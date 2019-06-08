@@ -58,9 +58,9 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <Container className="App">
-                <MainMenu site_name="ECOCERT"/>
-                <Route exact path="/" component={ HomePage } />
-                <Route exact path="/formular" component={ Formular } />   
+                  <MainMenu site_name="ECOCERT"/>
+                  <Route exact path="/" component={ HomePage } />
+                  <Route exact path="/formular" component={ Formular } />   
                 </Container>
             </BrowserRouter>
         );
