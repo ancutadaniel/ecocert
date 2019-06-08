@@ -1,7 +1,5 @@
-package com.ecocert.core.service;
+package com.ecocert.core.storage;
 
-import com.ecocert.core.model.StorageDirectory;
-import com.ecocert.core.model.StorageException;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,17 +14,14 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
 @Service
-public class StorageServiceImpl implements StorageService {
-
+public class StorageService {
 	private final Path rootLocation;
-//TODO create check for image  type accepted
 
 	@Autowired
-	public StorageServiceImpl(StorageDirectory storageDirectory) {
+	public StorageService(StorageDirectory storageDirectory) {
 		this.rootLocation = Paths.get(storageDirectory.getLocation());
 	}
 
-	@Override
 	public void createDirectory() {
 		try {
 			Files.createDirectories(rootLocation);
@@ -35,7 +30,6 @@ public class StorageServiceImpl implements StorageService {
 		}
 	}
 
-	@Override
 	public String store(MultipartFile file) throws IOException {
 		String fileName = null;
 		try {
@@ -50,11 +44,8 @@ public class StorageServiceImpl implements StorageService {
 			}
 			String md5Hex = DigestUtils.md5DigestAsHex(file.getBytes()).toUpperCase();
 			fileName = md5Hex + "." + FilenameUtils.getExtension(file.getOriginalFilename());
-			String finalFileName = fileName;
-			boolean fileExists = Files.list(this.rootLocation).anyMatch(e -> e.endsWith(finalFileName));
-			if (fileExists) {
-				return finalFileName;
-			}
+
+			if (imageFileExists(fileName)) return fileName;
 
 
 			try (InputStream inputStream = file.getInputStream()) {
@@ -65,6 +56,11 @@ public class StorageServiceImpl implements StorageService {
 			throw new StorageException("Failed to store file " + file.getOriginalFilename(), e);
 		}
 		return fileName;
+	}
+
+	private boolean imageFileExists(String fileName) throws IOException {
+		boolean fileExists = Files.list(this.rootLocation).anyMatch(e -> e.endsWith(fileName));
+		return fileExists;
 	}
 
 	public void getCoordinates(MultipartFile image) throws IOException {
