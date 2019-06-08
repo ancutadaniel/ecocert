@@ -2,9 +2,15 @@ import React from 'react';
 import './App.css';
 import { FilePond, registerPlugin } from 'react-filepond';
 import 'filepond/dist/filepond.min.css';
+
 import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css';
+
+import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
+
+// Register the plugin
 registerPlugin(FilePondPluginImagePreview);
+registerPlugin(FilePondPluginFileValidateType);
 
 class App extends React.Component {
     constructor(props) {
@@ -17,14 +23,15 @@ class App extends React.Component {
                 revert: null,
                 restore: null,
                 load: null
-            }
+            },
+            acceptedFileTypes: ['image/*']
         };
 
     }
     render() {
         return (
-            <div className="App">                   
-                  <FilePond allowMultiple={true} server={this.state.server}/>
+            <div className="App">
+                  <FilePond allowMultiple={true} server={this.state.server} acceptedFileTypes={this.state.acceptedFileTypes} />
             </div>
         );
     }

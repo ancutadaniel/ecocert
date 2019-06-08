@@ -5,6 +5,7 @@
   "dependencies": {
     "autocomplete-js": "^2.7.1",
     "filepond": "^4.4.9",
+    "filepond-plugin-file-validate-type": "^1.2.4",
     "filepond-plugin-image-preview": "^4.2.1",
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
