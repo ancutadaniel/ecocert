@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Container, Row, Col, Image, Nav, ListGroup, Button, ButtonToolbar, Navbar } from 'react-bootstrap';
-import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
+import {LinkContainer} from 'react-router-bootstrap'
 
 
 class HomePage extends React.Component {
@@ -21,9 +21,9 @@ class HomePage extends React.Component {
                 <Container fluid>
                     <Row>
                         <Col>
-                            <h1>
-                                Raporteaza
-                            </h1>
+                            <LinkContainer exact to="/addimage">
+                                <Nav.Link>Raporteaza</Nav.Link>
+                            </LinkContainer>
                             <p>
 
                             </p>
