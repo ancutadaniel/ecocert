@@ -74,6 +74,21 @@
 			<artifactId>spring-plugin-core</artifactId>
 			<version>1.2.0.RELEASE</version>
 		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+
+
+
 	</dependencies>
 
 	<build>
