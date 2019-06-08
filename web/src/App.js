@@ -23,9 +23,8 @@ class App extends React.Component {
     }
     render() {
         return (
-            <div className="App">
-                    <input name="image" accept="image/*" type="file"/>
-                    <FilePond allowMultiple={true} server={this.state.server}/>
+            <div className="App">                   
+                  <FilePond allowMultiple={true} server={this.state.server}/>
             </div>
         );
     }
