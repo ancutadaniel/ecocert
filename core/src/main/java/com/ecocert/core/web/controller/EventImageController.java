@@ -18,8 +18,6 @@ public class EventImageController {
 
 	@PostMapping
 	public ImageUploadResult getPicture(MultipartFile filepond) throws IOException {
-		String name = filepond.getOriginalFilename();
-
 		javaxt.io.Image img = new javaxt.io.Image(filepond.getInputStream());
 		double[] gps = img.getGPSCoordinate();
 

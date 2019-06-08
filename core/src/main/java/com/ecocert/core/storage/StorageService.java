@@ -1,5 +1,6 @@
 package com.ecocert.core.storage;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
+@Slf4j
 @Service
 public class StorageService {
 	private final Path rootLocation;
@@ -66,6 +68,6 @@ public class StorageService {
 	public void getCoordinates(MultipartFile image) throws IOException {
 		javaxt.io.Image img = new javaxt.io.Image(image.getInputStream());
 		double[] gps = img.getGPSCoordinate();
-		System.out.println(gps);
+		log.debug("Coordinates for " + image.getOriginalFilename() + " are: " + gps[0] + ", " + gps[1]);
 	}
 }
