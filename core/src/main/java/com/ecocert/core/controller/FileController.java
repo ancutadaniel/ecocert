@@ -21,11 +21,11 @@ public class FileController {
         javaxt.io.Image img = new javaxt.io.Image(filepond.getInputStream());
         double[] gps = img.getGPSCoordinate();
 
-        storageService.store(filepond);
+        String uuid = storageService.store(filepond);
         if (gps != null) {
-            return new ImageUploadResult(gps[0], gps[1]);
+            return new ImageUploadResult(gps[0], gps[1],uuid);
         } else {
-            return new ImageUploadResult();
+            return new ImageUploadResult(uuid);
         }
     }
 }

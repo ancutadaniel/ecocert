@@ -2,10 +2,7 @@ package com.ecocert.core.model;
 
 import org.hibernate.annotations.GeneratorType;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class CleanUpEvent {
@@ -13,7 +10,9 @@ public class CleanUpEvent {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Long socialId;
+    @Enumerated(EnumType.STRING)
     private TrashQuantity trashQuantity;
+    @Enumerated(EnumType.STRING)
     private TrashType trashType;
     private String info;
     private boolean anonymous;

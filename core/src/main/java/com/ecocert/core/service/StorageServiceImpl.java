@@ -2,6 +2,7 @@ package com.ecocert.core.service;
 
 import com.ecocert.core.model.StorageDirectory;
 import com.ecocert.core.model.StorageException;
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -12,6 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.UUID;
 
 @Service
 public class StorageServiceImpl implements StorageService {
@@ -34,8 +36,9 @@ public class StorageServiceImpl implements StorageService {
     }
 
     @Override
-    public void store(MultipartFile file) {
-        String fileName = file.getOriginalFilename();
+    public String store(MultipartFile file) {
+        UUID uid= UUID.randomUUID();
+        String fileName =uid + "."+ FilenameUtils.getExtension(file.getOriginalFilename());
         try {
             if (file.isEmpty()) {
                 throw new StorageException("Failed to store empty file " + fileName);
@@ -53,6 +56,7 @@ public class StorageServiceImpl implements StorageService {
         } catch (IOException e) {
             throw new StorageException("Failed to store file " + fileName, e);
         }
+        return fileName;
     }
 
     public void getCoordinates(MultipartFile image) throws IOException {
