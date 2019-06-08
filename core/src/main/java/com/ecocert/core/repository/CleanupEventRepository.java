@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface CleanupEventRepository extends JpaRepository <CleanupEvent, Long> {
 	public List<CleanupEvent> getEventsBySocialId(Long socialId);
+
 }
