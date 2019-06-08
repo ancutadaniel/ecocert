@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "filepond": "^4.4.9",
+    "filepond-plugin-image-preview": "^4.2.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-filepond": "^7.0.1",
