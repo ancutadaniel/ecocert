@@ -54,4 +54,10 @@ public class StorageServiceImpl implements StorageService {
             throw new StorageException("Failed to store file " + fileName, e);
         }
     }
+
+    public void getCoordinates(MultipartFile image) throws IOException {
+        javaxt.io.Image img = new javaxt.io.Image(image.getInputStream());
+        double[] gps = img.getGPSCoordinate();
+        System.out.println(gps);
+    }
 }
