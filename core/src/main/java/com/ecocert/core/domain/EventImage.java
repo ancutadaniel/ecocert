@@ -19,4 +19,10 @@ public class EventImage {
 	@Getter
 	@Setter
 	private String uuid;
+	@Getter
+	@Setter
+	private double longitude;
+	@Getter
+	@Setter
+	private double latitude;
 }

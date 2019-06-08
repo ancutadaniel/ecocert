@@ -70,4 +70,10 @@ public class StorageService {
 		double[] gps = img.getGPSCoordinate();
 		log.debug("Coordinates for " + image.getOriginalFilename() + " are: " + gps[0] + ", " + gps[1]);
 	}
+
+	public double[] getCoordinatesForStoredImage(String imageUUID) {
+		javaxt.io.Image img = new javaxt.io.Image(this.rootLocation.resolve(imageUUID).toFile());
+		double[] gps = img.getGPSCoordinate();
+		return gps;
+	}
 }
