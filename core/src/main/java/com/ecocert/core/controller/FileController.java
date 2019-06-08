@@ -17,6 +17,7 @@ public class FileController {
 
     @PostMapping("images")
     public ImageUploadResult getPicture(MultipartFile filepond) throws IOException {
+        String name = filepond.getOriginalFilename();
 
         javaxt.io.Image img = new javaxt.io.Image(filepond.getInputStream());
         double[] gps = img.getGPSCoordinate();
@@ -25,7 +26,7 @@ public class FileController {
         if (gps != null) {
             return new ImageUploadResult(gps[0], gps[1],uuid);
         } else {
-            return new ImageUploadResult(uuid);
+            return new ImageUploadResult(uuid,name);
         }
     }
 }

@@ -1,6 +1,5 @@
 package com.ecocert.core.model;
 
-import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
 import java.util.List;
@@ -16,9 +15,19 @@ public class CleanUpEvent {
     @Enumerated(EnumType.STRING)
     private TrashType trashType;
     private String info;
-    private boolean anonymous;
+    @ManyToOne
+    @JoinColumn(name="user_id", nullable=true)
+    private User user;
     @OneToMany(cascade=CascadeType.ALL)
     private List<EventImage> images;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public CleanUpEvent() {
     }
@@ -55,13 +64,6 @@ public class CleanUpEvent {
         this.info = info;
     }
 
-    public boolean isAnonymous() {
-        return anonymous;
-    }
-
-    public void setAnonymous(boolean anonymous) {
-        this.anonymous = anonymous;
-    }
 
     public Long getId() {
         return id;

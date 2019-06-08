@@ -4,6 +4,15 @@ public class ImageUploadResult {
     double longitude;
     double latitude;
     String imageUUID;
+    String originalName;
+
+    public String getOriginalName() {
+        return originalName;
+    }
+
+    public void setOriginalName(String originalName) {
+        this.originalName = originalName;
+    }
 
     public double getLongitude() {
         return longitude;
@@ -33,8 +42,9 @@ public class ImageUploadResult {
 
     }
 
-    public ImageUploadResult(String imageUUID) {
+    public ImageUploadResult(String imageUUID, String originalName) {
         this.imageUUID = imageUUID;
+        this.originalName = originalName;
     }
 
     public ImageUploadResult(double longitude, double latitude, String imageUUID) {
