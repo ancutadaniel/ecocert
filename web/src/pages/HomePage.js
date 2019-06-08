@@ -16,43 +16,20 @@ class HomePage extends React.Component {
     render() {
         return (
             <Container>
-                <Row className="text-center">
-                    <Navbar bg="primary" variant="dark" id="navigation">
-                        <Navbar.Brand href="#home" className="logo">
-                            <Image
-                                src="./ecocert-logo.png"
-                                width="auto"
-                                height="auto"
-                                className="d-inline-block align-top"
-                            // alt="React Bootstrap logo"
-                            />
-                        </Navbar.Brand>
-                        <Nav className="mr-auto ">
-                            <Nav.Link href="#home">Gunoaie</Nav.Link>
-                            <Nav.Link href="#features">Reciclare</Nav.Link>
-                            <Nav.Link href="#pricing">Rescue</Nav.Link>
-                            <Nav.Link href="#pricing">GDPR</Nav.Link>
-                            <Nav.Link>
-                                <Image />
-                            </Nav.Link>
-                        </Nav>
-                    </Navbar>
-
-                </Row >
-
+                
 
                 <Container fluid>
                     <Row>
                         <Col>
                             <h1>
                                 Raporteaza
-                </h1>
+                            </h1>
                             <p>
 
                             </p>
                             <button className="">
                                 Raporteaza
-              </button>
+                            </button>
                         </Col>
                     </Row>
                 </Container>
