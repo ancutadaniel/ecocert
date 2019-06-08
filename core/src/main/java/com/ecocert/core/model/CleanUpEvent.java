@@ -12,6 +12,7 @@ public class CleanUpEvent {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private Long socialId;
     private TrashQuantity trashQuantity;
     private TrashType trashType;
     private String info;
@@ -50,5 +51,21 @@ public class CleanUpEvent {
 
     public void setAnonymous(boolean anonymous) {
         this.anonymous = anonymous;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getSocialId() {
+        return socialId;
+    }
+
+    public void setSocialId(Long socialId) {
+        this.socialId = socialId;
     }
 }
