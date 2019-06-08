@@ -9,7 +9,7 @@ import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css
 import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import { HomePage, Formular } from './pages/';
+import { HomePage, Formular, AddImage } from './pages/';
 import { BrowserRouter, Route} from 'react-router-dom';
 import { Container, Row, Col, Image, ListGroup, Navbar, ButtonToolbar, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -60,7 +60,8 @@ class App extends React.Component {
                 <Container className="App">
                   <MainMenu site_name="ECOCERT"/>
                   <Route exact path="/" component={ HomePage } />
-                  <Route exact path="/formular" component={ Formular } />   
+                  <Route exact path="/formular" component={ Formular } />
+                  <Route exact path="/addimage" component={ AddImage } />
                 </Container>
             </BrowserRouter>
         );
