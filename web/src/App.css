@@ -46,3 +46,56 @@
     transform: rotate(360deg);
   }
 }
+
+.navigation-links {
+  position: relative;
+  float: right;
+}
+
+#navigation {
+  background-color: white!important;
+  display: flex;
+  justify-content: center;
+  color: #282c34!important;
+  width: 50%;
+  margin: 0 20% 0 30%;
+  height: 10vh;
+}
+
+.report {
+  height: 30vh;
+}
+
+.report {
+  height: 30vh;
+}
+
+.show-garbage {
+  height: 30vh;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: black!important;
+}
+
+#navigation>a {
+  color: #282c34!important;
+}
+
+#navigation>div>a {
+  padding: 2em;
+}
+
+#nav-links:hover {
+  color: rgb(5, 179, 121)!important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: black;
+  
+}
+
+.logo {
+  position: relative;
+  float: left;
+}

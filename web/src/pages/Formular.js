@@ -1,12 +1,12 @@
 import React from 'react';
-import '../../App.css';
-import '../../Contact.css';
-import UserContext from '../../shared/user.context';
+// import '../../App.css';
+// import '../../Contact.css';
+// import UserContext from '../../shared/user.context';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import { Button, Form, Container, Row, Image, Col } from 'react-bootstrap';
-import { logo } from '../../images/index';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { logo } from '../../images/index';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Formular extends React.Component {
     constructor(props) {
@@ -58,14 +58,14 @@ class Formular extends React.Component {
         }
         const { validated } = this.state;
         return (
-            <UserContext.Consumer>
-                {({ user, handleUserChange }) => (
+            // // <UserContext.Consumer>
+            //     {({ user, handleUserChange }) => (
                     <Container fluid className="contact_container" >
                         <Row>
                             <Container className="form_container">
-                                <Image src={logo} width="80" height="80" className="d-inline-block align-top" alt="React Bootstrap logo" />
+                                {/* <Image src={logo} width="80" height="80" className="d-inline-block align-top" alt="React Bootstrap logo" /> */}
                                 <Col>
-                                    <h2><FontAwesomeIcon icon={['fas', 'edit']} size={'lg'} />Contact Us</h2>
+                                    {/* <h2><FontAwesomeIcon icon={['fas', 'edit']} size={'lg'} />Contact Us</h2> */}
                                 </Col>
                                 <Form noValidate validated={validated} onSubmit={e => this.formSubmit(e)} >
                                         <Form.Group className="form_name">
@@ -88,12 +88,12 @@ class Formular extends React.Component {
                             </Container>
                         </Row>
                     </Container>
-                )}
-            </UserContext.Consumer>
+            //     )}
+            // </UserContext.Consumer>
         );
     }
 }
 
-Formular.contextType = UserContext;
+// Formular.contextType = UserContext;
 
 export default Formular;
