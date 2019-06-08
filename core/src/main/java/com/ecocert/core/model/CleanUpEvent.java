@@ -3,6 +3,7 @@ package com.ecocert.core.model;
 import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class CleanUpEvent {
@@ -16,8 +17,18 @@ public class CleanUpEvent {
     private TrashType trashType;
     private String info;
     private boolean anonymous;
+    @OneToMany(cascade=CascadeType.ALL)
+    private List<EventImage> images;
 
     public CleanUpEvent() {
+    }
+
+    public List<EventImage> getImages() {
+        return images;
+    }
+
+    public void setImages(List<EventImage> images) {
+        this.images = images;
     }
 
     public TrashQuantity getTrashQuantity() {
