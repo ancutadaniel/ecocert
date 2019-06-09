@@ -15,33 +15,35 @@ class HomePage extends React.Component {
 
     render() {
         return (
-            <Container>
+            <Container className="home">
                 
 
-                <Container fluid>
+                <Container fluid className="raport">
                     <Row>
                         <Col>
                             <LinkContainer exact to="/addimage">
-                                <Nav.Link>Raporteaza</Nav.Link>
+                               <Nav.Link  className="title"><h2>Raporteaza</h2> </Nav.Link>
                             </LinkContainer>
                         </Col>
                     </Row>
                 </Container>
 
-                <Container fluid>
+                <Container fluid  className="afis" >
                     <Row>
-                        <Col>
-                            <h1>Afiseaza gunoaie</h1>
-                            <p></p>
-                            <button>Afiseaza</button>
+                        <Col>                            
+                            <LinkContainer exact to="/pubela">
+                               <Nav.Link  className="title"><h2>Afiseaza gunoaie</h2></Nav.Link>
+                            </LinkContainer>                            
                         </Col>
                     </Row>
                 </Container>
 
-                <Container fluid>
+                <Container fluid className="last"> 
                     <Row>
-                        <Col>
-
+                        <Col>                            
+                            <LinkContainer exact to="/reciclare">
+                               <Nav.Link  className="title"><h2>Puncte de reciclare</h2></Nav.Link>
+                            </LinkContainer>
                         </Col>
                     </Row>
                 </Container>

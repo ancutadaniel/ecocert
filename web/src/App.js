@@ -16,11 +16,11 @@ import { Link } from 'react-router-dom';
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import MainMenu from './shared/mainMenu';
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { faCheckSquare, fas } from '@fortawesome/free-solid-svg-icons';
-// import { faGoogle, fab, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCheckSquare, fas } from '@fortawesome/free-solid-svg-icons';
 
-// library.add(fas, faCheckSquare);
+
+library.add(fas, faCheckSquare,);
 
 registerPlugin(FilePondPluginImagePreview, FilePondPluginFileValidateType);
 
@@ -57,7 +57,7 @@ class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <Container className="App">
+                <Container className="App main">
                   <MainMenu site_name="ECOCERT"/>
                   <Route exact path="/" component={ HomePage } />
                   <Route exact path="/formular" component={ Formular } />

@@ -55,10 +55,10 @@
 #navigation {
   background-color: white!important;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   color: #282c34!important;
   width: 50%;
-  margin: 0 20% 0 30%;
+  margin: 0 5%;
   height: 10vh;
 }
 
@@ -103,4 +103,25 @@
 .navbar-toggler-icon{
  
   color:black;
+}
+.main,.home {padding: 0px!important;}
+.navbar-dark .navbar-brand {width: 50%;}
+.logo{ border-radius:25px}
+.navbar-dark .navbar-toggler {
+  color: rgba(255,255,255,1)!important;
+  border-color: rgba(255,255,255,1)!important;
+}
+.rec, .trash {padding-right:5px;}
+.raport {background-color: #488A99; height: 150px;}
+.title {color:#fff!important;margin-top: 35px;}
+.afis {height: 150px;background-color: #7f8c8d;}
+.last {background-color:#27ae60; height: 150px;}
+.addimage  {padding: 0px!important;}
+/* .filepond--root {height:150px;} */
+.filepond--root .filepond--drop-label {min-height: 8.75em;}
+.filepond--panel-root {background-color: #264348!important ; border-radius:0px!important;}
+.filepond--drop-label { color: #fff !important; }
+.filepond--drop-label label {font-size: 22px!important;}
+.filepond--root .filepond--drop-label {
+  /* min-height: 50px!important; */
 }

@@ -19,7 +19,7 @@ class AddImage extends React.Component {
         this.state = {
             server: {
                 process: {
-                    url: 'http://192.168.34.67:8081/images',
+                    url: 'http://192.168.34.8:8081/images',
                     withCredentials: false,
                     onload: (response) => {response = JSON.parse(response); return response.imageUUID },
                 },
@@ -44,7 +44,7 @@ class AddImage extends React.Component {
 
     render() {
         return (
-            <Container>
+            <Container fluid className="addimage">
                 <FilePond ref={ref => this.pond = ref} allowMultiple={true} server={this.state.server} acceptedFileTypes={this.state.acceptedFileTypes}
                           required={this.state.required}
                           onprocessfiles={(fileItems) => {
