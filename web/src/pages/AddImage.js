@@ -37,26 +37,26 @@ class AddImage extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(){
+    handleClick(e){
         console.log(this.pond.getFiles());
+
         window.location = '/formular';
     }
 
     render() {
         return (
-            <Container fluid className="addimage">
-                <FilePond ref={ref => this.pond = ref} allowMultiple={true} server={this.state.server} acceptedFileTypes={this.state.acceptedFileTypes}
-                          required={this.state.required}
-                          onprocessfiles={(fileItems) => {
-                              this.setState({
-                                  nextDisabled: false
-                              });
-                          }}
-                />
-                <Button variant="success" disabled={this.state.nextDisabled} onClick={this.handleClick}>Next</Button>
-            </Container>
-        );
-    }
+                <Container fluid className="addimage">
+                    <FilePond ref={ref => this.pond = ref} allowMultiple={true} server={this.state.server} acceptedFileTypes={this.state.acceptedFileTypes}
+                              required={this.state.required}
+                              onprocessfiles={(fileItems) => {
+                                  this.setState({
+                                      nextDisabled: false
+                                  });
+                              }}
+                    />
+                    <Button variant="success" disabled={this.state.nextDisabled} onClick={e => this.handleClick(e)}>Next</Button>
+                </Container>
+                )}
 }
 
 export default AddImage;
