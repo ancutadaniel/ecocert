@@ -125,3 +125,6 @@
 .filepond--root .filepond--drop-label {
   /* min-height: 50px!important; */
 }
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff!important;
+}

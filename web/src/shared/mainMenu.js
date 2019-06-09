@@ -26,7 +26,7 @@ class MainMenu extends React.Component {
                 /> </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="mr-auto">
+                    <Nav className="mr-auto">                    
                         <LinkContainer to="/gunoaie">
                             <Nav.Link><span className="trash"><FontAwesomeIcon icon={['fas', 'trash-alt']} size={'lg'}/></span>Gunoaie</Nav.Link>
                         </LinkContainer>
@@ -40,6 +40,9 @@ class MainMenu extends React.Component {
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.4">Action</NavDropdown.Item>
                         </NavDropdown>
+                        <LinkContainer to="/login">
+                            <Nav.Link><span className="rec"><FontAwesomeIcon icon={['fas', 'user']} size={'lg'}/></span>Login</Nav.Link>
+                        </LinkContainer> 
                     </Nav>                   
                 </Navbar.Collapse>
             </Navbar>
