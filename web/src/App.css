@@ -128,3 +128,35 @@
 .navbar-dark .navbar-nav .nav-link {
   color: #fff!important;
 }
+
+.form-check{
+  width: 33%;
+  float: left;
+}
+
+.form-group{
+  margin-bottom: 30px !important;
+  display: block;
+}
+
+.map_google {
+  height: 300px !important;
+  margin-top: 30px;
+  width: 90% !important;
+
+}
+
+button[type="submit"]{
+  margin-top: 30px;
+}
+
+.info{
+  margin-top: 30px !important;
+  position: relative;
+  top: 30px;
+  left: -10px;
+}
+
+.markerImage{
+  width: 100%;
+}

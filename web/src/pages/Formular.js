@@ -13,8 +13,8 @@ class Formular extends React.Component {
                 trashQuantity: '',
                 trashType: '',
                 marker: {
-                    lat: 44.47599697222223,
-                    lng: 26.106394972222223
+                    lat: 44.4734,
+                    lng: 26.1342
                 },
             },
             showingInfoWindow: false,
@@ -56,9 +56,6 @@ class Formular extends React.Component {
                         <Row>
                             <Container className="form_container">
                                 <Form noValidate onSubmit={e => this.formSubmit(e)} >
-                                    <Form.Group>
-                                        <Form.Control as="textarea" id="info"  name="info" rows="3" value={this.state.newEvent.info} onChange={this.inputChanged} placeholder="Leave a comment:"/>
-                                    </Form.Group>
 
                                     <Form.Group>
                                         <Form.Label as="legend" column sm={2}>
@@ -66,105 +63,116 @@ class Formular extends React.Component {
                                         </Form.Label>
                                         <Form.Check
                                             type="radio"
-                                            label="SMALL"
+                                            label="Mica"
                                             name="trashQuantity"
                                             value="SMALL"
                                             onChange={this.inputChanged}
                                         />
                                         <Form.Check
                                             type="radio"
-                                            label="Medium"
+                                            label="Medie"
                                             name="trashQuantity"
                                             value="MEDIUM"
                                             onChange={this.inputChanged}
                                         />
                                         <Form.Check
                                             type="radio"
-                                            label="Large"
+                                            label="Mare"
                                             name="trashQuantity"
                                             value="LARGE"
                                             onChange={this.inputChanged}
                                         />
                                     </Form.Group>
 
-                                    <Form.Group>
-                                        <Form.Label as="legend" column sm={2}>
-                                            Tip gunoi:
-                                        </Form.Label>
-                                        <Form.Check
-                                            type="radio"
-                                            label="MENAJER"
-                                            name="trashType"
-                                            value="MENAJER"
-                                            onChange={this.inputChanged}
-                                        />
-                                        <Form.Check
-                                            type="radio"
-                                            label="MOLOZ"
-                                            name="trashType"
-                                            value="MOLOZ"
-                                            onChange={this.inputChanged}
-                                        />
-                                        <Form.Check
-                                            type="radio"
-                                            label="PLASTIC"
-                                            name="trashType"
-                                            value="PLASTIC"
-                                            onChange={this.inputChanged}
-                                        />
-                                        <Form.Check
-                                            type="radio"
-                                            label="ELECTRONIC"
-                                            name="trashType"
-                                            value="ELECTRONIC"
-                                            onChange={this.inputChanged}
-                                        />
-                                        <Form.Check
-                                            type="radio"
-                                            label="METAL"
-                                            name="trashType"
-                                            value="METAL"
-                                            onChange={this.inputChanged}
-                                        />
+                                    <Col>
+                                        <Form.Group>
+                                            <Form.Label as="legend" column sm={2}>
+                                                Tip gunoi:
+                                            </Form.Label>
+                                            <Form.Check
+                                                type="radio"
+                                                label="MENAJER"
+                                                name="trashType"
+                                                value="MENAJER"
+                                                onChange={this.inputChanged}
+                                            />
+                                            <Form.Check
+                                                type="radio"
+                                                label="MOLOZ"
+                                                name="trashType"
+                                                value="MOLOZ"
+                                                onChange={this.inputChanged}
+                                            />
+                                            <Form.Check
+                                                type="radio"
+                                                label="PLASTIC"
+                                                name="trashType"
+                                                value="PLASTIC"
+                                                onChange={this.inputChanged}
+                                            />
+                                            <Form.Check
+                                                type="radio"
+                                                label="ELECTRONIC"
+                                                name="trashType"
+                                                value="ELECTRONIC"
+                                                onChange={this.inputChanged}
+                                            />
+                                            <Form.Check
+                                                type="radio"
+                                                label="METAL"
+                                                name="trashType"
+                                                value="METAL"
+                                                onChange={this.inputChanged}
+                                            />
 
-                                        <Form.Check
-                                            type="radio"
-                                            label="STICLA"
-                                            name="trashType"
-                                            value="STICLA"
-                                            onChange={this.inputChanged}
-                                        />
-                                    </Form.Group>
+                                            <Form.Check
+                                                type="radio"
+                                                label="STICLA"
+                                                name="trashType"
+                                                value="STICLA"
+                                                onChange={this.inputChanged}
+                                            />
+                                        </Form.Group>
+                                    </Col>
+                                    <Col className="info">
+                                        <Form.Group>
+                                            <Form.Control as="textarea" id="info"  name="info" rows="3" value={this.state.newEvent.info} onChange={this.inputChanged} placeholder="Mai multe informatii:"/>
+                                        </Form.Group>
+                                    </Col>
+                                    <Col>
+                                        <Button type="submit" variant="outline-secondary">Trimite</Button>
+                                    </Col>
+                                    <Map className="map_google" google={this.props.google}
+                                         initialCenter={{
+                                             lat: this.state.newEvent.marker.lat,
+                                             lng: this.state.newEvent.marker.lng
+                                         }}
+                                         zoom={15}>
 
-                                    <Button type="submit" variant="outline-secondary">Send</Button>
+                                        <Marker position={{
+                                            lat: this.state.newEvent.marker.lat,
+                                            lng: this.state.newEvent.marker.lng
+                                        }} onClick={this.onMarkerClick} />
+                                        <InfoWindow
+                                            marker = { this.state.activeMarker }
+                                            visible = { this.state.showingInfoWindow }
+                                        >
+                                            <Container>
+                                                <div>
+                                                    Longitude: {this.state.newEvent.marker.lng}
+                                                </div>
+                                                <div>
+                                                    Latitude: {this.state.newEvent.marker.lat}
+                                                </div>
+                                                <img className="markerImage" src='http://192.168.34.8:8081/temp/28D4BD1248E57D5C9DC67BEA83D62715.jpg' />
+                                            </Container>
+
+                                        </InfoWindow>
+                                    </Map>
+
+
                                 </Form>
-                                <Map className="map_google" google={this.props.google}
-                                     initialCenter={{
-                                         lat: this.state.newEvent.marker.lat,
-                                         lng: this.state.newEvent.marker.lng
-                                     }}
-                                     zoom={15}>
 
-                                    <Marker position={{
-                                        lat: this.state.newEvent.marker.lat,
-                                        lng: this.state.newEvent.marker.lng
-                                    }} onClick={this.onMarkerClick} />
-                                    <InfoWindow
-                                        marker = { this.state.activeMarker }
-                                        visible = { this.state.showingInfoWindow }
-                                    >
-                                        <Container>
-                                            <div>
-                                            Longitude: {this.state.newEvent.marker.lng}
-                                            </div>
-                                            <div>
-                                            Latitude: {this.state.newEvent.marker.lat}
-                                            </div>
-                                            <img src='http://192.168.34.8:8081/temp/28D4BD1248E57D5C9DC67BEA83D62715.jpg' />
-                                        </Container>
-
-                                    </InfoWindow>
-                                </Map>
                             </Container>
                         </Row>
                     </Container>
