@@ -1,0 +1,21 @@
+server.port=8081
+spring.servlet.multipart.max-file-size=10MB
+spring.servlet.multipart.max-request-size=10MB
+
+
+spring.datasource.url=jdbc:h2:file:./data/ecocert
+spring.datasource.driver = org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=update
+#spring.jpa.hibernate.ddl-auto=create
+spring.jpa.properties.hibernate.format_sql=true
+spring.h2.console.enabled=true
+
+security.oauth2.client.registration.google.clientId=5014057553-8gm9um6vnli3cle5rgigcdjpdrid14m9.apps.googleusercontent.com
+security.oauth2.client.registration.google.clientSecret=tWZKVLxaD_ARWsriiiUFYoIk
+security.oauth2.client.registration.google.redirectUriTemplate="{baseUrl}/oauth2/callback/{registrationId}"
+security.oauth2.client.registration.google.scope=email,profile
+app.auth.tokenSecret=926D96C90030DD58429D2751AC1BDBBC
+app.auth.tokenExpirationMsec=864000000
+app.oauth2.authorizedRedirectUris=http://localhost:3000/oauth2/redirect

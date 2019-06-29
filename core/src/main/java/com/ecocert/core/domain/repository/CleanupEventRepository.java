@@ -1,4 +1,4 @@
-package com.ecocert.core.repository;
+package com.ecocert.core.domain.repository;
 
 import com.ecocert.core.domain.CleanupEvent;
 import org.springframework.data.jpa.repository.JpaRepository;

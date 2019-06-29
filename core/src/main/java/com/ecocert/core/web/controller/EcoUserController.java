@@ -1,7 +1,7 @@
 package com.ecocert.core.web.controller;
 
 import com.ecocert.core.domain.EcoUser;
-import com.ecocert.core.repository.EcoUserRepository;
+import com.ecocert.core.domain.repository.EcoUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

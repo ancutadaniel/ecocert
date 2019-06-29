@@ -2,7 +2,7 @@ package com.ecocert.core.web.controller;
 
 import com.ecocert.core.domain.CleanupEvent;
 import com.ecocert.core.domain.EventImage;
-import com.ecocert.core.repository.CleanupEventRepository;
+import com.ecocert.core.domain.repository.CleanupEventRepository;
 import com.ecocert.core.storage.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
