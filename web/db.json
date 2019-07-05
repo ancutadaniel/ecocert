@@ -1,0 +1,22 @@
+{
+  "forms": [
+    {
+      "info": "Este gunoi mediu",
+      "trashSize": "medie",
+      "trashType": "moloz",
+      "id": 1
+    },
+    {
+      "info": "",
+      "trashSize": "",
+      "trashType": "",
+      "id": 2
+    },
+    {
+      "info": "test",
+      "trashSize": "mare",
+      "trashType": "plastic",
+      "id": 3
+    }
+  ]
+}
