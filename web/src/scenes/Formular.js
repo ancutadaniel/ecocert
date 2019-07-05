@@ -25,7 +25,7 @@ class Formular extends React.Component {
         const newEvent = this.state.newEvent;
         newEvent[e.currentTarget.name] = value;
         this.setState({newEvent});
-        console.log({newEvent});
+        //console.log({newEvent});
     }
 
     async formSubmit(e) {
