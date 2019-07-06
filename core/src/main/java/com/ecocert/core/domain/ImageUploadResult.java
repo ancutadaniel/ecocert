@@ -13,6 +13,7 @@ public class ImageUploadResult {
     private double longitude;
     private double latitude;
     private String imageUUID;
+    private String photoTimeStamp;
 
     public ImageUploadResult(String uuid) {
         this.imageUUID = uuid;
