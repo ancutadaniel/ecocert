@@ -4,7 +4,6 @@ logging:
       springframework:
         security: DEBUG
 
-
 server:
   port: 8081
 

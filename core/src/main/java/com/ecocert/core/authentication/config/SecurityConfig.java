@@ -30,6 +30,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
         prePostEnabled = true
 )
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    public enum OAuthProvider {
+        google,
+        facebook,
+    }
 
     @Autowired
     private CustomUserDetailsService customUserDetailsService;
