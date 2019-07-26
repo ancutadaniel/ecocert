@@ -3,6 +3,7 @@ package com.ecocert.core.domain;
 import com.ecocert.core.domain.enumeration.ReportStatus;
 import com.ecocert.core.domain.enumeration.TrashQuantity;
 import com.ecocert.core.domain.enumeration.TrashType;
+import com.ecocert.core.web.dto.TrashReportDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -40,8 +41,8 @@ public class TrashReport {
 //// - comments
 //    private String comments;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+@GeneratedValue(strategy = GenerationType.AUTO)
+private int id;
     // - pictureHash
     // - latitude
     // - longitude
@@ -62,4 +63,15 @@ public class TrashReport {
     private TrashType trashType;
     // - comments
     private String comments;
+
+
+    public TrashReport (TrashReportDto trashReport){
+        this.imageUploadResult = trashReport.getImageUploadResult();
+        this.timestamp = trashReport.getTimestamp();
+        this.status = trashReport.getStatus();
+        this.user = trashReport.getUser();
+        this.trashQuantity = trashReport.getTrashQuantity();
+        this.trashType = trashReport.getTrashType();
+        this.comments = trashReport.getComments();
+    }
 }

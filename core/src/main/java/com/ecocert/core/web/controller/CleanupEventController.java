@@ -12,33 +12,33 @@ import java.util.List;
 @RestController
 @RequestMapping("events")
 public class CleanupEventController {
-	@Autowired
-	private CleanupEventRepository repo;
+    @Autowired
+    private CleanupEventRepository repo;
 
-	@Autowired
-	private StorageService storageService;
+    @Autowired
+    private StorageService storageService;
 
-	@GetMapping
-	public List<CleanupEvent> getEvents(@RequestParam(required = false, value = "socialId") Long socialId) {
-		if (socialId == null) {
-			return repo.findAll();
-		}
-		return repo.getEventsBySocialId(socialId);
-	}
+    @GetMapping
+    public List<CleanupEvent> getEvents(@RequestParam(required = false, value = "socialId") Long socialId) {
+        if (socialId == null) {
+            return repo.findAll();
+        }
+        return repo.getEventsBySocialId(socialId);
+    }
 
-	@PostMapping
-	public void addEvent(@RequestBody CleanupEvent cleanUpEvent) {
-		try {
-			cleanUpEvent.getImages().stream().forEach(this::fillCoordinates);
-		} catch(Exception e){ // numai la hackathon
-		}
+    @PostMapping
+    public void addEvent(@RequestBody CleanupEvent cleanUpEvent) {
+        try {
+            cleanUpEvent.getImages().stream().forEach(this::fillCoordinates);
+        } catch (Exception e) { // numai la hackathon
+        }
 
-		repo.save(cleanUpEvent);
-	}
+        repo.save(cleanUpEvent);
+    }
 
-	private void fillCoordinates(EventImage e) {
-		double[] gps = storageService.getCoordinatesForStoredImage(e.getUuid());
-		e.setLongitude(gps[0]);
-		e.setLatitude(gps[1]);
-	}
+    private void fillCoordinates(EventImage e) {
+        double[] gps = storageService.getCoordinatesForStoredImage(e.getUuid());
+        e.setLongitude(gps[0]);
+        e.setLatitude(gps[1]);
+    }
 }
