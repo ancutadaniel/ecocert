@@ -8,21 +8,29 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @Entity
-public class EventImage {
+public class ReportImage {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Getter
 	private int id;
+
 	@Getter
 	@Setter
 	private String uuid;
+
 	@Getter
 	@Setter
 	private double longitude;
+
 	@Getter
 	@Setter
 	private double latitude;
+
+	@Getter
+	@Setter
+	private LocalDateTime takenOn;
 }

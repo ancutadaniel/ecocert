@@ -2,7 +2,6 @@ package com.ecocert.core.web.dto;
 
 
 import com.ecocert.core.domain.EcoUser;
-import com.ecocert.core.domain.ImageUploadResult;
 import com.ecocert.core.domain.enumeration.ReportStatus;
 import com.ecocert.core.domain.enumeration.TrashQuantity;
 import com.ecocert.core.domain.enumeration.TrashType;
@@ -20,7 +19,7 @@ public class TrashReportDto {
     // - latitude
     // - longitude
     // - photoTimestamp
-    private ImageUploadResult imageUploadResult;
+    private ImageUploadDto imageUploadDto;
     // - timestamp
     private String timestamp;
     // - status(incomplete, complete)

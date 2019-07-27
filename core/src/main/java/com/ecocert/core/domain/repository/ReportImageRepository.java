@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface CleanupEventRepository extends JpaRepository <CleanupEvent, Long> {
+public interface ReportImageRepository extends JpaRepository <ReportImage, Long> {
 }

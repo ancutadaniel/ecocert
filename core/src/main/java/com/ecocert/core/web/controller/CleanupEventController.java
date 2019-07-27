@@ -1,8 +1,9 @@
 package com.ecocert.core.web.controller;
 
 import com.ecocert.core.domain.CleanupEvent;
-import com.ecocert.core.domain.EventImage;
+import com.ecocert.core.domain.ReportImage;
 import com.ecocert.core.domain.repository.CleanupEventRepository;
+import com.ecocert.core.domain.repository.ReportImageRepository;
 import com.ecocert.core.storage.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,10 +21,10 @@ public class CleanupEventController {
 
     @GetMapping
     public List<CleanupEvent> getEvents(@RequestParam(required = false, value = "socialId") Long socialId) {
-        if (socialId == null) {
+//        if (socialId == null) {
             return repo.findAll();
-        }
-        return repo.getEventsBySocialId(socialId);
+//        }
+//        return repo.findAll(socialId);
     }
 
     @PostMapping
@@ -36,7 +37,7 @@ public class CleanupEventController {
         repo.save(cleanUpEvent);
     }
 
-    private void fillCoordinates(EventImage e) {
+    private void fillCoordinates(ReportImage e) {
         double[] gps = storageService.getCoordinatesForStoredImage(e.getUuid());
         e.setLongitude(gps[0]);
         e.setLatitude(gps[1]);

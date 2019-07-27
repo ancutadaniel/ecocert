@@ -15,20 +15,19 @@ import java.util.List;
 //  de adaugat logica in functie de User.
 
 @RestController
-@RequestMapping("trashReport")
+@RequestMapping("reports")
 public class TrashReportController {
     @Autowired
-    private TrashReportService repo;
+    private TrashReportService service;
+
+    @GetMapping
+    public List<TrashReportDto> getReports() {
+        return service.getAllTrashReports();
+    }
 
     //TODO de adaugat user.
-    @PostMapping("/report")
+    @PostMapping
     public void report(TrashReportDto report) {
-        repo.saveTrashReport(report);
+        service.saveTrashReport(report);
     }
-
-    @GetMapping("/getReports")
-    public List<TrashReportDto> getReports() {
-        return repo.getAllTrashReports();
-    }
-
 }

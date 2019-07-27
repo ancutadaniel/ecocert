@@ -28,5 +28,5 @@ public class CleanupEvent {
 	@JoinColumn(name = "user_id", nullable = true)
 	private EcoUser user;
 	@OneToMany(cascade = CascadeType.ALL)
-	private List<EventImage> images;
+	private List<ReportImage> images;
 }

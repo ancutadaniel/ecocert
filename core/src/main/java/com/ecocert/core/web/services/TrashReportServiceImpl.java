@@ -28,24 +28,24 @@ public class TrashReportServiceImpl implements TrashReportService {
 
     private TrashReport convertToDTO(TrashReportDto trashReportDto) {
         TrashReport trashReport = new TrashReport();
-        trashReport.setImageUploadResult(trashReportDto.getImageUploadResult());
-        trashReport.setTimestamp(trashReportDto.getTimestamp());
-        trashReport.setStatus(trashReportDto.getStatus());
-        trashReport.setUser(trashReportDto.getUser());
-        trashReport.setTrashQuantity(trashReportDto.getTrashQuantity());
-        trashReport.setTrashType(trashReportDto.getTrashType());
-        trashReport.setComments(trashReportDto.getComments());
+//        trashReport.setImageUploadResult(trashReportDto.getImageUploadDto());
+//        trashReport.setTimestamp(trashReportDto.getTimestamp());
+//        trashReport.setStatus(trashReportDto.getStatus());
+//        trashReport.setUser(trashReportDto.getUser());
+//        trashReport.setTrashQuantity(trashReportDto.getTrashQuantity());
+//        trashReport.setTrashType(trashReportDto.getTrashType());
+//        trashReport.setComments(trashReportDto.getComments());
         return trashReport;
     }
 
     private TrashReportDto convertToEntity(TrashReport trashReportD) {
         TrashReportDto trashReportDto = new TrashReportDto();
-        trashReportDto.setImageUploadResult(trashReportD.getImageUploadResult());
-        trashReportDto.setTimestamp(trashReportD.getTimestamp());
-        trashReportDto.setStatus(trashReportD.getStatus());
-        trashReportDto.setUser(trashReportD.getUser());
-        trashReportDto.setTrashQuantity(trashReportD.getTrashQuantity());
-        trashReportDto.setTrashType(trashReportD.getTrashType());
+//        trashReportDto.setImageUploadDto(trashReportD.getImageUploadResult());
+//        trashReportDto.setTimestamp(trashReportD.getTimestamp());
+//        trashReportDto.setStatus(trashReportD.getStatus());
+//        trashReportDto.setUser(trashReportD.getUser());
+//        trashReportDto.setTrashQuantity(trashReportD.getTrashQuantity());
+//        trashReportDto.setTrashType(trashReportD.getTrashType());
         trashReportDto.setComments(trashReportD.getComments());
         return trashReportDto;
     }
