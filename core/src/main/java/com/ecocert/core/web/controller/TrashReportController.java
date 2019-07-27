@@ -3,10 +3,7 @@ package com.ecocert.core.web.controller;
 import com.ecocert.core.domain.services.TrashReportService;
 import com.ecocert.core.web.dto.TrashReportDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,7 +24,7 @@ public class TrashReportController {
 
     //TODO de adaugat user.
     @PostMapping
-    public void report(TrashReportDto report) {
+	public void report(@RequestBody TrashReportDto report) {
         service.saveTrashReport(report);
     }
 }

@@ -24,6 +24,8 @@ spring:
   h2:
     console:
       enabled: true
+      settings:
+        web-allow-others: true
   servlet:
     multipart:
       max-file-size: 10MB
