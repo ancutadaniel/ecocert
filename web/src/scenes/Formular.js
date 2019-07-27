@@ -7,12 +7,13 @@ import {Electronic, Menajer, Moloz, Platic, Sticla, Metal, Mica, Medie, Mare} fr
 class Formular extends React.Component {
     constructor(props) {
         super(props);
-        this.apiUrl = "http://localhost:3004/forms";
+        this.apiUrl = "http://192.168.1.62:8081/reports";
         this.state = {
             newEvent: {
                 info: '',
                 trashSize: '',
                 trashType: '',
+                image: '94D5502D5FC3F0BC760C9A537C4DC8F9.jpg' //FIXME replace with image hash
             },
         };
 
@@ -29,7 +30,7 @@ class Formular extends React.Component {
     }
 
     async formSubmit(e) {
-    debugger;
+        debugger;
         e.preventDefault();
         const form = e.currentTarget;
         if (form.checkValidity() === false) {
@@ -54,7 +55,7 @@ class Formular extends React.Component {
                                         <Col xs={4}>
                                             <Form.Label>
                                                 <input name="trashSize" type="radio" className="form-check-input"
-                                                       value="mica" onChange={this.inputChanged}/>
+                                                       value="SMALL" onChange={this.inputChanged}/>
                                                 <Image
                                                     src={Mica}
                                                     width="100%"
@@ -66,7 +67,7 @@ class Formular extends React.Component {
                                         <Col xs={4}>
                                             <Form.Label>
                                                 <input name="trashSize" type="radio" className="form-check-input"
-                                                       value="medie" onChange={this.inputChanged}/>
+                                                       value="MEDIUM" onChange={this.inputChanged}/>
                                                 <Image
                                                     src={Medie}
                                                     width="100%"
@@ -78,7 +79,7 @@ class Formular extends React.Component {
                                         <Col xs={4}>
                                             <Form.Label>
                                                 <input name="trashSize" type="radio" className="form-check-input"
-                                                       value="mare" onChange={this.inputChanged}/>
+                                                       value="LARGE" onChange={this.inputChanged}/>
                                                 <Image
                                                     src={Mare}
                                                     width="100%"
@@ -103,7 +104,7 @@ class Formular extends React.Component {
                                             <Col xs={6}>
                                                 <Form.Label>
                                                     <input name="trashType" type="radio" className="form-check-input"
-                                                           value="menajer" onChange={this.inputChanged}/>
+                                                           value="HOUSEHOLD_WASTE" onChange={this.inputChanged}/>
                                                     <Image
                                                         src={Menajer}
                                                         width="100%"
@@ -115,7 +116,7 @@ class Formular extends React.Component {
                                             <Col xs={6}>
                                                 <Form.Label>
                                                     <input name="trashType" type="radio" className="form-check-input"
-                                                           value="moloz" onChange={this.inputChanged}/>
+                                                           value="DEBRIS" onChange={this.inputChanged}/>
                                                     <Image
                                                         src={Moloz}
                                                         width="100%"
@@ -129,7 +130,7 @@ class Formular extends React.Component {
                                             <Col xs={6}>
                                                 <Form.Label>
                                                     <input name="trashType" type="radio" className="form-check-input"
-                                                           value="plastic" onChange={this.inputChanged}/>
+                                                           value="PLASTICS" onChange={this.inputChanged}/>
                                                     <Image
                                                         src={Platic}
                                                         width="100%"
@@ -141,7 +142,7 @@ class Formular extends React.Component {
                                             <Col xs={6}>
                                                 <Form.Label>
                                                     <input name="trashType" type="radio" className="form-check-input"
-                                                           value="electronic" onChange={this.inputChanged}/>
+                                                           value="ELECTRONICS" onChange={this.inputChanged}/>
                                                     <Image
                                                         src={Electronic}
                                                         width="100%"
@@ -155,7 +156,7 @@ class Formular extends React.Component {
                                             <Col xs={6}>
                                                 <Form.Label>
                                                     <input name="trashType" type="radio" className="form-check-input"
-                                                           value="sticla" onChange={this.inputChanged}/>
+                                                           value="GLASS" onChange={this.inputChanged}/>
                                                     <Image
                                                         src={Sticla}
                                                         width="100%"
@@ -167,7 +168,7 @@ class Formular extends React.Component {
                                             <Col xs={6}>
                                                 <Form.Label>
                                                     <input name="trashType" type="radio" className="form-check-input"
-                                                           value="metal" onChange={this.inputChanged}/>
+                                                           value="METALS" onChange={this.inputChanged}/>
                                                     <Image
                                                         src={Metal}
                                                         width="100%"
