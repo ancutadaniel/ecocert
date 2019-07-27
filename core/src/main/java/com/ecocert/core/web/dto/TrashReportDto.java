@@ -1,36 +1,14 @@
 package com.ecocert.core.web.dto;
 
 
-import com.ecocert.core.domain.EcoUser;
-import com.ecocert.core.domain.enumeration.ReportStatus;
-import com.ecocert.core.domain.enumeration.TrashQuantity;
+import com.ecocert.core.domain.enumeration.TrashSize;
 import com.ecocert.core.domain.enumeration.TrashType;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
-
-// TODO: create dto
-@NoArgsConstructor
-@Getter
-@Setter
+@Data
 public class TrashReportDto {
-    // - pictureHash
-    // - latitude
-    // - longitude
-    // - photoTimestamp
-    private ImageUploadDto imageUploadDto;
-    // - timestamp
-    private String timestamp;
-    // - status(incomplete, complete)
-    private ReportStatus status;
-    // - User
-    private EcoUser user;
-    // - TrashQuantity
-    private TrashQuantity trashQuantity;
-    // - TrashType
-    private TrashType trashType;
-    // - comments
-    private String comments;
-
+	private String image;
+	private TrashSize trashSize;
+	private TrashType trashType;
+	private String info;
 }

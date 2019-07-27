@@ -1,5 +1,5 @@
 package com.ecocert.core.domain.enumeration;
 
-public enum TrashQuantity {
+public enum TrashSize {
     SMALL, MEDIUM, LARGE
 }

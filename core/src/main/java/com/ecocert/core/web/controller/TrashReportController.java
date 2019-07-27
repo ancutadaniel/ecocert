@@ -1,7 +1,7 @@
 package com.ecocert.core.web.controller;
 
+import com.ecocert.core.domain.services.TrashReportService;
 import com.ecocert.core.web.dto.TrashReportDto;
-import com.ecocert.core.web.services.TrashReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

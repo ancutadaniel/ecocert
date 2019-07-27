@@ -1,7 +1,7 @@
 package com.ecocert.core.domain;
 
 import com.ecocert.core.domain.enumeration.ReportStatus;
-import com.ecocert.core.domain.enumeration.TrashQuantity;
+import com.ecocert.core.domain.enumeration.TrashSize;
 import com.ecocert.core.domain.enumeration.TrashType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,9 +19,10 @@ public class TrashReport {
 	@Getter
 	private int id;
 
-//	@Getter
-//	@Setter
-//	private ReportImage image;
+	@Getter
+	@Setter
+	@OneToOne
+	private ReportImage image;
 
 	@Getter
 	@Setter
@@ -31,7 +32,7 @@ public class TrashReport {
 	@Getter
 	@Setter
 	@Enumerated(EnumType.STRING)
-	private TrashQuantity trashQuantity;
+	private TrashSize trashSize;
 
 	@Getter
 	@Setter
