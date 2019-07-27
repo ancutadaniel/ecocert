@@ -17,6 +17,12 @@
       "trashSize": "mare",
       "trashType": "plastic",
       "id": 3
+    },
+    {
+      "info": "mare moloz",
+      "trashSize": "mare",
+      "trashType": "moloz",
+      "id": 4
     }
   ]
 }
