@@ -30,10 +30,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
         prePostEnabled = true
 )
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    public enum OAuthProvider {
-        google,
-        facebook,
-    }
 
     @Autowired
     private CustomUserDetailsService customUserDetailsService;
@@ -108,6 +104,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                     .antMatchers("/",
                         "/h2-console/**",
+		                    "/swagger-resources/**",
+		                    "/swagger-ui.html",
+		                    "/v2/api-docs",
+		                    "/webjars/**",
                         "/error",
                         "/favicon.ico",
                         "/**/*.png",

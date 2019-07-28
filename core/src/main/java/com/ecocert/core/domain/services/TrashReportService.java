@@ -56,6 +56,11 @@ public class TrashReportService {
 		if (image == null) {
 			throw new IllegalArgumentException("error.report.imageInvalid");
 		}
+
+		TrashReport existingReport = repo.findByImage_Uuid(image.getUuid());
+		if (existingReport != null) {
+			throw new IllegalArgumentException("error.report.imageAlreadyUploaded");
+		}
 		return image;
 	}
 

@@ -16,11 +16,11 @@ import java.util.HashMap;
 @NoArgsConstructor
 @Entity
 public class ReportImage {
-	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Getter
 	private int id;
 
+	@Id
 	@Getter
 	@Setter
 	private String uuid;

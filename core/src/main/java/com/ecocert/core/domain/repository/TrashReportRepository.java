@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TrashReportRepository extends JpaRepository<TrashReport, Long> {
+	TrashReport findByImage_Uuid(String uuid);
 }
