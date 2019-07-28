@@ -1,7 +1,7 @@
 package com.ecocert.core.domain;
 
 
-import com.ecocert.core.domain.enumeration.TrashQuantity;
+import com.ecocert.core.domain.enumeration.TrashSize;
 import com.ecocert.core.domain.enumeration.TrashType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,13 +20,11 @@ public class CleanupEvent {
 	private Long id;
 	private Long socialId;
 	@Enumerated(EnumType.STRING)
-	private TrashQuantity trashQuantity;
+	private TrashSize trashSize;
 	@Enumerated(EnumType.STRING)
 	private TrashType trashType;
 	private String info;
-	@ManyToOne
-	@JoinColumn(name = "user_id", nullable = true)
-	private EcoUser user;
+
 	@OneToMany(cascade = CascadeType.ALL)
-	private List<EventImage> images;
+	private List<ReportImage> images;
 }
