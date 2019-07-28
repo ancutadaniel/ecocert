@@ -1,5 +1,6 @@
 package com.ecocert.core.domain.services;
 
+import com.ecocert.core.authentication.model.User;
 import com.ecocert.core.domain.ReportImage;
 import com.ecocert.core.domain.TrashReport;
 import com.ecocert.core.domain.enumeration.ReportStatus;
@@ -19,7 +20,7 @@ public class TrashReportService {
 	@Autowired
 	ReportImageRepository imageRepo;
 
-	public void saveTrashReport(TrashReportDto trashReportDto) {
+	public void saveTrashReport(User user, TrashReportDto trashReportDto) {
 		TrashReport trashReport = new TrashReport();
 		fromDto(trashReport, trashReportDto);
 		repo.save(trashReport);
