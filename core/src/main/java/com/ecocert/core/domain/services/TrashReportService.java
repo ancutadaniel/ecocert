@@ -51,7 +51,7 @@ public class TrashReportService {
 			throw new IllegalArgumentException("error.report.typeMandatory");
 		}
 
-		ReportImage image = imageRepo.findByUuid(report.getImage());
+		ReportImage image = imageRepo.findByUuid(report.getImage()); // TODO: this might throw exception if there are multiple records with the same uuid
 		if (image == null) {
 			throw new IllegalArgumentException("error.report.imageInvalid");
 		}
