@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 import MainMenu from "./components/mainMenu";
-import {Formular, Home, UploadImage} from "./scenes";
+import {Formular, Home, UploadImage, Map} from "./scenes";
 
 import {Container} from "react-bootstrap";
 
@@ -26,6 +26,7 @@ class App extends React.Component {
                     <Route exact path="/" component={ Home }/>
                     <Route exact path="/formular" component={ Formular }/>
                     <Route exact path="/uploadimage" component={ UploadImage }/>
+                    <Route exact path="/map" component={ Map }/>
                 </Container>
             </BrowserRouter>
         );

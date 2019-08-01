@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Container, Row, Col, Nav,} from 'react-bootstrap';
-import {LinkContainer} from 'react-router-bootstrap'
+import {LinkContainer} from 'react-router-bootstrap';
 
 
 class Home extends React.Component {
@@ -37,8 +37,8 @@ class Home extends React.Component {
                 <Container fluid className="last">
                     <Row>
                         <Col>
-                            <LinkContainer exact to="/reciclare">
-                                <Nav.Link  className="title"><h2>Reciclare</h2></Nav.Link>
+                            <LinkContainer exact to="/map">
+                                <Nav.Link  className="title"><h2>Map</h2></Nav.Link>
                             </LinkContainer>
                         </Col>
                     </Row>
