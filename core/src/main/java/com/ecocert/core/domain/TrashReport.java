@@ -1,6 +1,6 @@
 package com.ecocert.core.domain;
 
-import com.ecocert.core.domain.enumeration.ReportStatus;
+import com.ecocert.core.authentication.model.User;
 import com.ecocert.core.domain.enumeration.TrashSize;
 import com.ecocert.core.domain.enumeration.TrashType;
 import lombok.Getter;
@@ -27,7 +27,7 @@ public class TrashReport {
 	@Getter
 	@Setter
 	@Enumerated(EnumType.STRING)
-	private ReportStatus status;
+	private Status status;
 
 	@Getter
 	@Setter
@@ -43,11 +43,16 @@ public class TrashReport {
 	@Setter
 	private String comments;
 
-//	@Getter
-//	@Setter
-//	private User user;
+	@Getter
+	@Setter
+	@ManyToOne
+	private User user;
 
 	@CreationTimestamp
 	@Getter
 	private LocalDateTime timestamp;
+
+	public enum Status {
+		NEW, CLEANED, SPAM
+	}
 }

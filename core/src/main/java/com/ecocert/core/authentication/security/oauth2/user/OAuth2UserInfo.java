@@ -1,16 +1,15 @@
 package com.ecocert.core.authentication.security.oauth2.user;
 
+import lombok.Getter;
+
 import java.util.Map;
 
 public abstract class OAuth2UserInfo {
+	@Getter
 	protected Map<String, Object> attributes;
 
 	public OAuth2UserInfo(Map<String, Object> attributes) {
 		this.attributes = attributes;
-	}
-
-	public Map<String, Object> getAttributes() {
-		return attributes;
 	}
 
 	public abstract String getId();

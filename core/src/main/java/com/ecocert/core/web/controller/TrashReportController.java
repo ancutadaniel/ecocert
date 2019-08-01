@@ -43,7 +43,7 @@ public class TrashReportController {
 		if (userPrincipal == null) {
 			throw new IllegalArgumentException("Reports cannot be anonymous yet!");
 		}
-		User user = userRepo.findByEmail(userPrincipal.getEmail()).orElseThrow(() -> new IllegalStateException("You have to be logged in to make a report!"));
+		User user = userRepo.getOne(userPrincipal.getId());//findByEmail(userPrincipal.getEmail()).orElseThrow(() -> new IllegalStateException("You have to be logged in to make a report!"));
 
 		service.saveTrashReport(user, report);
 	}

@@ -3,7 +3,6 @@ package com.ecocert.core.domain.services;
 import com.ecocert.core.authentication.model.User;
 import com.ecocert.core.domain.ReportImage;
 import com.ecocert.core.domain.TrashReport;
-import com.ecocert.core.domain.enumeration.ReportStatus;
 import com.ecocert.core.domain.repository.ReportImageRepository;
 import com.ecocert.core.domain.repository.TrashReportRepository;
 import com.ecocert.core.web.dto.TrashReportDto;
@@ -33,7 +32,7 @@ public class TrashReportService {
 	private void fromDto(TrashReport report, TrashReportDto trashReportDto) {
 		ReportImage reportImage = validateTrashReport(trashReportDto);
 		report.setComments(trashReportDto.getInfo());
-		report.setStatus(ReportStatus.NEW);
+		report.setStatus(TrashReport.Status.NEW);
 		report.setTrashSize(trashReportDto.getTrashSize());
 		report.setTrashType(trashReportDto.getTrashType());
 		report.setImage(reportImage);
