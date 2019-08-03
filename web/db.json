@@ -24,5 +24,27 @@
       "trashType": "moloz",
       "id": 4
     }
+  ],
+  "location": [
+    {
+      "latitude": 45,
+      "longitude": 25.55,
+      "id": 1
+    },
+    {
+      "latitude": 45,
+      "longitude": 24,
+      "id": 2
+    },
+    {
+      "latitude": 45,
+      "longitude": 26,
+      "id": 3
+    },
+    {
+      "latitude": 45.650694099999996,
+      "longitude": 25.561304399999997,
+      "id": 4
+    }
   ]
 }

@@ -1,5 +1,8 @@
-import FormularStyle from "./Formular_style.css";
+import FormTrashStyle from "./Form_style.css";
+import MapsStyle from "./Map_style.css";
 
 export {
-    FormularStyle,
+    FormTrashStyle,
+    MapsStyle
+
 }

@@ -1,15 +1,13 @@
 import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 import MainMenu from "./components/mainMenu";
-import {Formular, Home, UploadImage, Map} from "./scenes";
-
+import {FormTrash, Home, UploadImage, Maps} from "./scenes";
 import {Container} from "react-bootstrap";
-
-
 import './styles/App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCheckSquare, fas } from '@fortawesome/free-solid-svg-icons';
+
 library.add(fas, faCheckSquare,);
 
 
@@ -24,9 +22,9 @@ class App extends React.Component {
                 <Container fluid className="App main">
                     <MainMenu site_name="ECOCERT"/>
                     <Route exact path="/" component={ Home }/>
-                    <Route exact path="/formular" component={ Formular }/>
+                    <Route exact path="/formular" component={ FormTrash }/>
                     <Route exact path="/uploadimage" component={ UploadImage }/>
-                    <Route exact path="/map" component={ Map }/>
+                    <Route exact path="/map" component={ Maps }/>
                 </Container>
             </BrowserRouter>
         );

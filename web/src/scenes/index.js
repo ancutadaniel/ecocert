@@ -1,14 +1,14 @@
-import Formular from './Formular';
+import FormTrash from './FormTrash';
 import Home from './Home';
 import UploadImage from './UploadImage';
-import Map from './Map';
+import Maps from './Maps';
 
 
 
 
 export {
-    Formular,
+    FormTrash,
     Home,
     UploadImage,
-    Map
+    Maps
 };
