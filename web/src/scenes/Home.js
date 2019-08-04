@@ -27,7 +27,7 @@ class Home extends React.Component {
                 <Container fluid  className="second" >
                     <Row>
                         <Col>
-                            <LinkContainer exact to="/formular">
+                            <LinkContainer exact to="/form">
                                 <Nav.Link  className="title"><h2>{this.state.welcome}</h2></Nav.Link>
                             </LinkContainer>
                         </Col>

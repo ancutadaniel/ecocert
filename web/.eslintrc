@@ -6,7 +6,6 @@
   "ecmaFeatures": {
     "jsx": true
   },
-  "ecmaVersion": 2019,
   "plugins": [
     "react"
   ],

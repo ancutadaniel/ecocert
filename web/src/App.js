@@ -22,7 +22,7 @@ class App extends React.Component {
                 <Container fluid className="App main">
                     <MainMenu site_name="ECOCERT"/>
                     <Route exact path="/" component={ Home }/>
-                    <Route exact path="/formular" component={ FormTrash }/>
+                    <Route exact path="/form" component={ FormTrash }/>
                     <Route exact path="/uploadimage" component={ UploadImage }/>
                     <Route exact path="/map" component={ Maps }/>
                 </Container>
