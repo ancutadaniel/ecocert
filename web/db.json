@@ -1,0 +1,80 @@
+{
+  "forms": [
+    {
+      "info": "Este gunoi mediu",
+      "trashSize": "medie",
+      "trashType": "moloz",
+      "id": 1
+    },
+    {
+      "info": "",
+      "trashSize": "",
+      "trashType": "",
+      "id": 2
+    },
+    {
+      "info": "test",
+      "trashSize": "mare",
+      "trashType": "plastic",
+      "id": 3
+    },
+    {
+      "info": "mare moloz",
+      "trashSize": "mare",
+      "trashType": "moloz",
+      "id": 4
+    }
+  ],
+  "location": [
+    {
+      "latitude": 45,
+      "longitude": 25.55,
+      "id": 1
+    },
+    {
+      "latitude": 45,
+      "longitude": 24,
+      "id": 2
+    },
+    {
+      "latitude": 45,
+      "longitude": 26,
+      "id": 3
+    },
+    {
+      "latitude": 45.650694099999996,
+      "longitude": 25.561304399999997,
+      "id": 4
+    },
+    {
+      "latitude": 45.650694099999996,
+      "longitude": 25.561304399999997,
+      "id": 5
+    },
+    {
+      "latitude": 45.641559199999996,
+      "longitude": 25.585483099999998,
+      "id": 6
+    },
+    {
+      "latitude": 51.507351,
+      "longitude": -0.127758,
+      "id": 7
+    },
+    {
+      "latitude": 51.507351,
+      "longitude": -0.127758,
+      "id": 8
+    },
+    {
+      "latitude": 51.507351,
+      "longitude": -0.127758,
+      "id": 9
+    },
+    {
+      "latitude": 51.507351,
+      "longitude": -0.127758,
+      "id": 10
+    }
+  ]
+}

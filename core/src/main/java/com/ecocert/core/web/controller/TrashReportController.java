@@ -20,30 +20,17 @@ public class TrashReportController {
 	@Autowired
 	private UserRepository userRepo;
 
-	//	@PostMapping("/report")
-//	public void report(@AuthenticationPrincipal UserPrincipal userPrincipal, TrashReportDto report) {
-//		if (userPrincipal == null || report.anonymous()) {
-//			// TODO: raport anonim
-//			TrashReport t = new TrashReport();
-//
-//			t.setUser(null);
-//		} else {
-//			// TODO: raport cu user
-//			t.setUser(getUserFromPrincipal(userPrincipal));
-//		}
-//	}
 	@GetMapping
 	public List<TrashReportDto> getReports(@AuthenticationPrincipal UserPrincipal userPrincipal) {
 		return service.getAllTrashReports(userRepo.getOne(userPrincipal.getId()));
 	}
 
-	//TODO de adaugat user.
 	@PostMapping
 	public void report(@AuthenticationPrincipal UserPrincipal userPrincipal, @RequestBody TrashReportDto report) {
 		if (userPrincipal == null) {
 			throw new IllegalArgumentException("Reports cannot be anonymous yet!");
 		}
-		User user = userRepo.getOne(userPrincipal.getId());//findByEmail(userPrincipal.getEmail()).orElseThrow(() -> new IllegalStateException("You have to be logged in to make a report!"));
+		User user = userRepo.getOne(userPrincipal.getId());
 
 		service.saveTrashReport(user, report);
 	}
