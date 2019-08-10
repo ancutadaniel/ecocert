@@ -33,8 +33,8 @@ public class TrashReportController {
 //		}
 //	}
 	@GetMapping
-	public List<TrashReportDto> getReports() {
-		return service.getAllTrashReports();
+	public List<TrashReportDto> getReports(@AuthenticationPrincipal UserPrincipal userPrincipal) {
+		return service.getAllTrashReports(userRepo.getOne(userPrincipal.getId()));
 	}
 
 	//TODO de adaugat user.

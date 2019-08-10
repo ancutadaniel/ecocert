@@ -10,7 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
 
 @Service
 public class TrashReportService {
@@ -22,11 +23,12 @@ public class TrashReportService {
 	public void saveTrashReport(User user, TrashReportDto trashReportDto) {
 		TrashReport trashReport = new TrashReport();
 		fromDto(trashReport, trashReportDto);
+		trashReport.setUser(user);
 		repo.save(trashReport);
 	}
 
-	public List<TrashReportDto> getAllTrashReports() {
-		return repo.findAll().stream().map(this::convertToEntity).collect(Collectors.toList());
+	public List<TrashReportDto> getAllTrashReports(User user) {
+		return repo.findAllByUser(user).stream().map(TrashReportDto::new).collect(toList());
 	}
 
 	private void fromDto(TrashReport report, TrashReportDto trashReportDto) {
@@ -51,7 +53,7 @@ public class TrashReportService {
 			throw new IllegalArgumentException("error.report.typeMandatory");
 		}
 
-		ReportImage image = imageRepo.findByUuid(report.getImage()); // TODO: this might throw exception if there are multiple records with the same uuid
+		ReportImage image = imageRepo.getOne(report.getImage()); // TODO: this might throw exception if there are multiple records with the same uuid
 		if (image == null) {
 			throw new IllegalArgumentException("error.report.imageInvalid");
 		}
