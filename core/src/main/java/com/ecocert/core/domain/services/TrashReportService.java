@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.*;
 
 @Service
 public class TrashReportService {
@@ -30,6 +30,24 @@ public class TrashReportService {
 	public List<TrashReportDto> getAllTrashReports(User user) {
 		return repo.findAllByUser(user).stream().map(TrashReportDto::new).collect(toList());
 	}
+
+	public double calculateDistanceBetweenPointsWithHypot(
+			double x1,
+			double y1,
+			double x2,
+			double y2) {
+
+		double ac = Math.abs(y2 - y1);
+		double cb = Math.abs(x2 - x1);
+
+		return Math.hypot(ac, cb);
+	}
+
+	public List<TrashReportDto> getTrashReportsInCoordinateRange(User user, double latitude, double longitude) {
+//		Location
+		return repo.findAllByUser(user).stream().map(TrashReportDto::new).collect(toList());
+	}
+
 
 	private void fromDto(TrashReport report, TrashReportDto trashReportDto) {
 		ReportImage reportImage = validateTrashReport(trashReportDto);
@@ -63,17 +81,5 @@ public class TrashReportService {
 			throw new IllegalArgumentException("error.report.imageAlreadyUploaded");
 		}
 		return image;
-	}
-
-	private TrashReportDto convertToEntity(TrashReport trashReportD) {
-		TrashReportDto trashReportDto = new TrashReportDto();
-//        trashReportDto.setImageUploadDto(trashReportD.getImageUploadResult());
-//        trashReportDto.setTimestamp(trashReportD.getTimestamp());
-//        trashReportDto.setStatus(trashReportD.getStatus());
-//        trashReportDto.setUser(trashReportD.getUser());
-//        trashReportDto.setTrashSize(trashReportD.getTrashSize());
-//        trashReportDto.setTrashType(trashReportD.getTrashType());
-//        trashReportDto.setComments(trashReportD.getComments());
-		return trashReportDto;
 	}
 }
