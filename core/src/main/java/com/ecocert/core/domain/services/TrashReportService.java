@@ -27,25 +27,16 @@ public class TrashReportService {
 		repo.save(trashReport);
 	}
 
-	public List<TrashReportDto> getAllTrashReports(User user) {
-		return repo.findAllByUser(user).stream().map(TrashReportDto::new).collect(toList());
-	}
-
-	public double calculateDistanceBetweenPointsWithHypot(
-			double x1,
-			double y1,
-			double x2,
-			double y2) {
-
-		double ac = Math.abs(y2 - y1);
-		double cb = Math.abs(x2 - x1);
-
-		return Math.hypot(ac, cb);
+	public List<TrashReport> getAllTrashReports(User user) {
+		return repo.findAllByUser(user);
 	}
 
 	public List<TrashReportDto> getTrashReportsInCoordinateRange(User user, double latitude, double longitude) {
-//		Location
-		return repo.findAllByUser(user).stream().map(TrashReportDto::new).collect(toList());
+		List<TrashReport> allByUser = repo.findAllByUser(user);
+		allByUser.stream()
+				.filter(r -> r.isWithinRange(latitude, longitude))
+				.collect(toList());
+		return allByUser.stream().map(TrashReportDto::new).collect(toList());
 	}
 
 

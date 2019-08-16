@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static java.util.stream.Collectors.*;
+
 @RestController
 @RequestMapping("reports")
 public class TrashReportController {
@@ -22,7 +24,10 @@ public class TrashReportController {
 
 	@GetMapping
 	public List<TrashReportDto> getReports(@AuthenticationPrincipal UserPrincipal userPrincipal) {
-		return service.getAllTrashReports(userRepo.getOne(userPrincipal.getId()));
+		return service.getAllTrashReports(userRepo.getOne(userPrincipal.getId()))
+				.stream()
+				.map(TrashReportDto::new)
+				.collect(toList());
 	}
 
 	@PostMapping

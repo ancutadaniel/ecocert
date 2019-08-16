@@ -3,6 +3,7 @@ package com.ecocert.core.domain;
 import com.ecocert.core.authentication.model.User;
 import com.ecocert.core.domain.enumeration.TrashSize;
 import com.ecocert.core.domain.enumeration.TrashType;
+import com.ecocert.core.web.config.Haversine;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -51,6 +52,18 @@ public class TrashReport {
 	@CreationTimestamp
 	@Getter
 	private LocalDateTime timestamp;
+
+	/**
+	 * Validates that the report image is within 10 km of the coordinates passed in as parameters
+	 *
+	 * @param latitude
+	 * @param longitude
+	 * @return
+	 */
+	public boolean isWithinRange(double latitude, double longitude) {
+		double distance = Haversine.distance(image.getLatitude(), image.getLongitude(), latitude, longitude);
+		return distance < 10;
+	}
 
 	public enum Status {
 		NEW, CLEANED, SPAM
